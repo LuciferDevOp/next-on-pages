@@ -1,5 +1,4 @@
 
-import axios from 'axios';
 export const runtime = 'edge';
 
 export default async function handler(req, res) {
@@ -10,7 +9,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await axios.get(`https://mybot-md2-default-rtdb.firebaseio.com/${id}`);
+    const response = await fetch(`https://mybot-md2-default-rtdb.firebaseio.com/${id}`);
     const data = response.data;
     return res.status(200).json(data);
   
